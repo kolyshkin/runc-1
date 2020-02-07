@@ -180,6 +180,8 @@ func (m *Manager) Apply(pid int) error {
 		}
 	}
 
+	properties = append(properties, c.SystemdProps...)
+
 	var err error
 	theConn, err = systemdDbus.New()
 	if err != nil {
